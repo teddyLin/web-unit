@@ -30,8 +30,10 @@
       jasmineEnv.updateInterval = 1000;
 
       var txtReporter = new TextReporter();
+
+      window.txtReporter = txtReporter; 
       txtReporter.onRunnerFinished(function (text) {
-        console.log('22222222222222');
+        console.log('one test case finish');
       });
 
       jasmineEnv.addReporter(txtReporter);
