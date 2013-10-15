@@ -10,49 +10,14 @@
   <script type="text/javascript" src="../tools/jasmine/lib/jasmine-1.3.0/jasmine-html.js"></script>
 
   <!-- include spec files here... -->
-  <script type="text/javascript" src="TextReporter.js"></script>
+  <script type="text/javascript" src="../../main/src/TextReporter.js"></script>
   <script type="text/javascript" src="spec/expectation.js"></script>
+
+  <script type="text/javascript" src="../../main/src/exec-jasmine.js"></script>
 
   <script type="text/javascript">
     (function() {
-      var jasmineEnv = jasmine.getEnv();
-      jasmineEnv.updateInterval = 1000;
-
-      var htmlReporter = new jasmine.HtmlReporter();
-
-      jasmineEnv.addReporter(htmlReporter);
-
-      jasmineEnv.specFilter = function(spec) {
-        return htmlReporter.specFilter(spec);
-      };
-
-      var jasmineEnv = jasmine.getEnv();
-      jasmineEnv.updateInterval = 1000;
-
-      var txtReporter = new TextReporter();
-
-      window.txtReporter = txtReporter; 
-      txtReporter.onRunnerFinished(function (text) {
-        console.log('one test case finish');
-      });
-
-      jasmineEnv.addReporter(txtReporter);
-
-      var currentWindowOnload = window.onload;
-
-      window.onload = function() {
-        if (currentWindowOnload) {
-          currentWindowOnload();
-        }
-        execJasmine();
-
-        console.log('finish');
-      };
-
-      function execJasmine() {
-        jasmineEnv.execute();
-      }
-
+        // nothing to do 
     })();
   </script>
 

@@ -22,10 +22,19 @@
     console.log('start');
 
     var iframe = $('#test-wrap'); 
-
     var tc = window.tc; 
 
-    
+    var tcUrl = tc.pop(); 
+    iframe[0].src = tcUrl; 
+
+    function next() {
+      tcUrl = tc.pop(); 
+
+      if (!tcUrl) return ; // stop
+      iframe.src = tcUrl; 
+    }
+
+
 
 
   })
