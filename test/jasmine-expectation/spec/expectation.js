@@ -184,7 +184,6 @@ describe("A spec", function() {
 	beforeEach(function() {
 		foo = 0;
 		foo += 1;
-		console.log('1');
 	});
 
 	afterEach(function() {
@@ -205,7 +204,6 @@ describe("A spec", function() {
 
 		beforeEach(function() {
 			bar = 1;
-			console.log(2);
 		});
 
 		it("can reference both scopes as needed ", function() {

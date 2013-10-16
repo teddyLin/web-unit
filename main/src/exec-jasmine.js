@@ -17,11 +17,12 @@
 
 	window.txtReporter = txtReporter;
 	txtReporter.onRunnerFinished(function(text) {
-		console.log('one test case finish');
+		var reporter = window.txtReporter; 
+		console.log(this);
+		window.parent.next(text);
 	});
 
 	jasmineEnv.addReporter(txtReporter);
-
 
 	var currentWindowOnload = window.onload;
 	window.onload = function() {
@@ -29,7 +30,6 @@
 			currentWindowOnload();
 		}
 		execJasmine();
-		console.log('finish');
 	};
 
 	function execJasmine() {

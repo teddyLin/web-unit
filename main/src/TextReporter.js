@@ -16,7 +16,7 @@ TextReporter.prototype.reportRunnerResults = function (runner) {
     this.textResult += "\r\n";
 
     if (this.callbackEnd) {
-        this.callbackEnd(this.textResult);
+        this.callbackEnd(this.textResult, this);
     }
 };
 
